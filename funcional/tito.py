@@ -24,14 +24,9 @@ def revisar_posicion(x, y):
     return x, y
 '''
 
-borde_x = lambda x: 0 if x < 0 else 400
+borde = lambda x: 0 if x < 0 else 400
 
-revisar_posicion_x = lambda x: x if 0 < x < 400 else borde_x(x)
-
-borde_y = lambda y: 0 if y < 0 else 400
-
-revisar_posicion_y = lambda y: y if 0 < y < 400 else borde_y(y)
-
+revisar_posicion = lambda a: a if 0 < a < 400 else borde(a)
 
 # Funciones de movimiento
 '''def mov_norte(x, y):
@@ -40,13 +35,13 @@ revisar_posicion_y = lambda y: y if 0 < y < 400 else borde_y(y)
     return x, y
 '''
 
-mov_norte = lambda x, y: (revisar_posicion_x(x), revisar_posicion_y(y + 10))
+mov_norte = lambda x, y: (revisar_posicion(x), revisar_posicion(y + 10))
 
-mov_sur = lambda x, y: (revisar_posicion_x(x), revisar_posicion_y(y - 20))
+mov_sur = lambda x, y: (revisar_posicion(x), revisar_posicion(y - 20))
 
-mov_este = lambda x, y: (revisar_posicion_x(x + 10), revisar_posicion_y(y))
+mov_este = lambda x, y: (revisar_posicion(x + 10), revisar_posicion(y))
 
-mov_oeste = lambda x, y: (revisar_posicion_x(x - 20), revisar_posicion_y(y))
+mov_oeste = lambda x, y: (revisar_posicion(x - 20), revisar_posicion(y))
 
 
 '''

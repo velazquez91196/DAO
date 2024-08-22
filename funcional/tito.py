@@ -1,6 +1,7 @@
 import random
 
 
+'''
 def borde_x(x):
     if x < 0:
         x = 0
@@ -21,13 +22,34 @@ def revisar_posicion(x, y):
         x = borde_x(x)
         y = borde_y(y)
     return x, y
+'''
+
+borde_x = lambda x: 0 if x < 0 else 400
+
+revisar_posicion_x = lambda x: x if 0 < x < 400 else borde_x(x)
+
+borde_y = lambda y: 0 if y < 0 else 400
+
+revisar_posicion_y = lambda y: y if 0 < y < 400 else borde_y(y)
+
 
 # Funciones de movimiento
-def mov_norte(x, y):
+'''def mov_norte(x, y):
     y = y + 10
     x, y = revisar_posicion(x, y)
     return x, y
+'''
 
+mov_norte = lambda x, y: (revisar_posicion_x(x), revisar_posicion_y(y + 10))
+
+mov_sur = lambda x, y: (revisar_posicion_x(x), revisar_posicion_y(y - 20))
+
+mov_este = lambda x, y: (revisar_posicion_x(x + 10), revisar_posicion_y(y))
+
+mov_oeste = lambda x, y: (revisar_posicion_x(x - 20), revisar_posicion_y(y))
+
+
+'''
 def mov_sur(x, y):
     y = y - 20
     x, y = revisar_posicion(x, y)
@@ -42,6 +64,8 @@ def mov_oeste(x, y):
     x = x - 20
     x, y = revisar_posicion(x, y)
     return x, y
+
+'''
 
 def mostrar_menu():
     print("Seleccione una tipo de movimiento: ")
